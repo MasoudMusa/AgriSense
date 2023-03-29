@@ -1,0 +1,62 @@
+# Register user qith email,password, first and last name
+POST http://localhost:8000/api/auth/register/ HTTP/1.1
+content-type: application/json
+
+{
+    "email": "jayden@outlook.com",
+    "password": "biddweuiuaUI",
+    "first_name": "Jayden",
+    "last_name": "Ahesa"
+}
+
+###Login user with email,password
+POST http://localhost:8000/api/auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "email": "masoudmusa@outlook.com",
+    "password": "biddweuiuaUI"
+}
+
+###Change password for authenticated user
+POST http://localhost:8000/api/auth/user/change-password/ HTTP/1.1
+content-type: application/json
+Authorization: Token cbed2524b8ca943d51b34a7ed579d9ffb5312e2f
+
+{    
+    "old_password": "biddweuiuaUI",
+    "new_password": "biddweuiuaUI123"
+}
+
+###Get user details by ID(superuser)
+GET http://localhost:8000/api/user/3/ HTTP/1.1
+content-type: application/json
+Authorization: Token b8b2a73ed15e371ff936831f819260c62279926d
+
+
+###Log out authenticated user
+POST http://localhost:8000/api/auth/logout/ HTTP/1.1
+content-type: application/json
+
+{"token":"cbed2524b8ca943d51b34a7ed579d9ffb5312e2f"}
+
+###Get current user details
+GET http://localhost:8000/api/user/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token b8b2a73ed15e371ff936831f819260c62279926d	
+
+###Get all user deatils(superuser)
+GET http://localhost:8000/api/users/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token b8b2a73ed15e371ff936831f819260c62279926d	
+
+###Change details of current authenticated user
+PUT http://localhost:8000/api/user/update/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token cbed2524b8ca943d51b34a7ed579d9ffb5312e2f
+
+{
+    "email": "masoudmusa@outlook.com",
+    "first_name": "Masoud",
+    "last_name": "Musa"
+}

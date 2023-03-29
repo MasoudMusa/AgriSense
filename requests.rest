@@ -1,4 +1,4 @@
-# Register user qith email,password, first and last name
+### Register user qith email,password, first and last name
 POST http://localhost:8000/api/auth/register/ HTTP/1.1
 content-type: application/json
 

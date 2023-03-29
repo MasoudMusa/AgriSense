@@ -16,7 +16,6 @@ dw
 GET /api/users/ HTTP/1.1
 Content-Type: application/json
 Authorization: Token <token>>
-6d	
 ```
 
 ### Change details of current authenticated user

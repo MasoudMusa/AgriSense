@@ -8,7 +8,6 @@ A tech-based solution that provides farmers with insights and data to make infor
 
 [Documentation](https://linktodocumentation)
 
-dw
 ## API Reference
 
 ### Get all user deatils(superuser)

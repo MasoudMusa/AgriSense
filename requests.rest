@@ -3,10 +3,13 @@ POST http://localhost:8000/api/auth/register/ HTTP/1.1
 content-type: application/json
 
 {
+    "username": "Jayden",
     "email": "jayden@outlook.com",
     "password": "biddweuiuaUI",
+    "password2": "biddweuiuaUI",
     "first_name": "Jayden",
-    "last_name": "Ahesa"
+    "last_name": "Ahesa",
+    "is_farmer": true
 }
 
 ###Login user with email,password
@@ -14,14 +17,14 @@ POST http://localhost:8000/api/auth/login/ HTTP/1.1
 content-type: application/json
 
 {
-    "email": "masoudmusa@outlook.com",
+    "email": "Jayden",
     "password": "biddweuiuaUI"
 }
 
 ###Change password for authenticated user
 POST http://localhost:8000/api/auth/user/change-password/ HTTP/1.1
 content-type: application/json
-Authorization: Token cbed2524b8ca943d51b34a7ed579d9ffb5312e2f
+Authorization: Token dc98defff483bf00ad17bcd2667e04168ba25bea
 
 {    
     "old_password": "biddweuiuaUI",
@@ -43,7 +46,7 @@ content-type: application/json
 ###Get current user details
 GET http://localhost:8000/api/user/ HTTP/1.1
 Content-Type: application/json
-Authorization: Token b8b2a73ed15e371ff936831f819260c62279926d	
+Authorization: Token dc98defff483bf00ad17bcd2667e04168ba25bea	
 
 ###Get all user deatils(superuser)
 GET http://localhost:8000/api/users/ HTTP/1.1
@@ -60,3 +63,29 @@ Authorization: Token cbed2524b8ca943d51b34a7ed579d9ffb5312e2f
     "first_name": "Masoud",
     "last_name": "Musa"
 }
+
+### Create a message to provided username in url
+POST http://localhost:8000/api/messages/create/user/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token dc98defff483bf00ad17bcd2667e04168ba25bea
+
+{
+    "content": "Hello, this is a test message!"
+}
+
+### Get list of messages sent by user
+GET http://localhost:8000/api/messages/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token dc98defff483bf00ad17bcd2667e04168ba25bea
+
+### Follow user by username
+POST http://localhost:8000/api/follow/user/ HTTP/1.1
+Authorization: Token dc98defff483bf00ad17bcd2667e04168ba25bea
+
+### Unfollow user by username
+DELETE  http://localhost:8000/api/unfollow/user/ HTTP/1.1
+Authorization: Token dc98defff483bf00ad17bcd2667e04168ba25bea
+
+### GET farmers list
+GET http://127.0.0.1:8000/api/farmers/ HTTP/1.1
+Authorization: Token dc98defff483bf00ad17bcd2667e04168ba25bea

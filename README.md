@@ -14,15 +14,14 @@ A tech-based solution that provides farmers with insights and data to make infor
 ```http
 GET http://localhost:8000/api/users/ HTTP/1.1
 Content-Type: application/json
-Authorization: Token <token>>
-6d	
+Authorization: Token <token>
 ```
 
 ### Change details of current authenticated user
 ```http
 PUT http://localhost:8000/api/user/update/ HTTP/1.1
 Content-Type: application/json
-Authorization: Token <token>>
+Authorization: Token <token>
 
 {
     "email": "user@email.com",
@@ -57,7 +56,7 @@ content-type: application/json
 ```http
 POST http://localhost:8000/api/auth/user/change-password/ HTTP/1.1
 content-type: application/json
-Authorization: Token <token>f
+Authorization: Token <token>
 
 {    
     "old_password": "biddweuiuaUI",
@@ -68,7 +67,7 @@ Authorization: Token <token>f
 ```http
 GET http://localhost:8000/api/user/3/ HTTP/1.1
 content-type: application/json
-Authorization: Token <token>d
+Authorization: Token <token>
 ```
 
 ### Log out authenticated user
@@ -76,7 +75,7 @@ Authorization: Token <token>d
 POST http://localhost:8000/api/auth/logout/ HTTP/1.1
 content-type: application/json
 
-{"token"<token>}
+{"token":<token>}
 ```
 ### Get current user details
 ```http

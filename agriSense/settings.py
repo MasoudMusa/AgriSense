@@ -6,8 +6,10 @@ SECRET_KEY = 'django-insecure-i83xt*1*-3$1b$-i)=@!1)3!&)orzn!_7cgh7r6+z+j$97hxa^
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'f46b-197-156-137-168.eu.ngrok.io',
+    '127.0.0.1'
+]
 
 
 INSTALLED_APPS = [
@@ -94,3 +96,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'core.CustomUser'
